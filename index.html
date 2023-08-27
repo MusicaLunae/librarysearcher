@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+    <head>
+        <title>Library Search</title>
+        <script src="./scripts/typeselector.js" type="script/JavaScript"></script>
+    </head>
+    <body>
+        <h1>Search the database</h1>
+        
+        <form method="post">
+            <label>Choose category: </label>
+            <select name="category-list" id="category-list">
+                <option value="" selected>-- Please select an option --</option>
+                <option value="moviesAll">Movies (all)</option>
+                <option value="moviesBR">Movies (Blu-Ray)</option>
+                <option value="moviesX264">Movies (x264 / x265)</option>
+                <option value="moviesXVID">Movies (xVid)</option>
+                <option value="showsAll">TV Shows (all)</option>
+                <option value="showsHD">TV Shows (FHD+)</option>
+            </select>
+            <input type="checkbox" name="uhdToggle" id="uhdToggle" />
+            <label for="uhdToggle">Include Ultra HD/4k</label>
+            <input type="checkbox" name="3dToggle" id="3dToggle" />
+            <label for="3dToggle">Include 3D</label>
+            
+
+        </form>
+    </body>

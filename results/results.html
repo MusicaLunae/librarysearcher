@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Results</title>
+    </head>
+
+    <body>
+        <h2>You searched for: <span id="searchTerm" style="text-decoration: underline;"></span></h2>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Magnet link</th>
+                <th>Size (GiB)</th>
+            </tr>
+            {%for entry in results%}
+                <tr>
+                    <td>{{entry[0]}}</td>
+                    <td>{{entry[1]}}</td>
+                    <td>{{entry[2]}}</td>
+                    <td>{{entry[3]}}</td> 
+                </tr>
+            {%endfor%}
+        </table>
+    </body>
+</html>

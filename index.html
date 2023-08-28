@@ -5,27 +5,47 @@
         <script src="./scripts/typeselector.js" type="script/JavaScript"></script>
     </head>
     <body>
-        <h1>Search the database</h1>
-        
-        <form action="{{ url_for('form_retriever') }}" method="POST">
-            <select name="category-list" id="category-list">
-                <option value="" selected>-- Choose category --</option>
-                <option value="all">Everything</option>
-                <option value="moviesAll">Movies (all)</option>
-                <option value="moviesBR">Movies (Blu-Ray)</option>
-                <option value="moviesX264">Movies (x264 / x265)</option>
-                <option value="moviesXVID">Movies (xVid)</option>
-                <option value="showsAll">TV Shows (all)</option>
-                <option value="showsHD">TV Shows (FHD+)</option>
-            </select><br />
-            <input type="checkbox" name="uhdToggle" id="uhdToggle" />
-            <label for="uhdToggle">Include Ultra HD/4k (x264/x265 only)</label><br />
-            <input type="checkbox" name="3dToggle" id="3dToggle" />
-            <label for="3dToggle">Include 3D (x264/x265 only)</label><br />
+        <div id="searchInput">
+            <h1>Search the database</h1>
             
-            <input type="text" name="searchTerm" id="searchTerm" /><br />
-            <input type="submit" value="Search" />
+            <form method="POST">
+                <select name="category-list" id="category-list">
+                    <option value="" selected>-- Choose category --</option>
+                    <option value="all">Everything</option>
+                    <option value="moviesAll">Movies (all)</option>
+                    <option value="moviesBR">Movies (Blu-Ray)</option>
+                    <option value="moviesX264">Movies (x264 / x265)</option>
+                    <option value="moviesXVID">Movies (xVid)</option>
+                    <option value="showsAll">TV Shows (all)</option>
+                    <option value="showsHD">TV Shows (FHD+)</option>
+                </select><br />
+                <input type="checkbox" name="uhdToggle" id="uhdToggle" />
+                <label for="uhdToggle">Include Ultra HD/4k (x264/x265 only)</label><br />
+                <input type="checkbox" name="3dToggle" id="3dToggle" />
+                <label for="3dToggle">Include 3D (x264/x265 only)</label><br />
 
-        </form>
+                <input type="text" name="searchTerm" id="searchTerm" /><br />
+                <input type="submit" value="Search" />
+
+            </form>
+        </div>
+<!--        <div id="returnedQuery" style="padding-top: 15px;">
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Magnet link</th>
+                    <th>Size (GiB)</th>
+                </tr>
+                {%for entry in results%}
+                    <tr>
+                        <td>{{entry[0]}}</td>
+                        <td>{{entry[1]}}</td>
+                        <td>{{entry[2]}}</td>
+                        <td>{{entry[3]}}</td> 
+                    </tr>
+                {%endfor%}
+            </table>
+        </div> -->
     </body>
 </html>

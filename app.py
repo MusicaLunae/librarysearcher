@@ -56,11 +56,11 @@ def uh3dParser(__cat__, __uhdStat__, __threeDstat__):
         return ""
     
     if __uhdStat__ == False & __threeDstat__ == False:
-        return "and group not like ('movies_x264_3d' and 'movies_x264_4k' and 'movies_x265_4k' and 'movies_x265_4k_hdr')"
+        return " and group not like ('movies_x264_3d' and 'movies_x264_4k' and 'movies_x265_4k' and 'movies_x265_4k_hdr')"
     elif __uhdStat__ == True & __threeDstat__ == False:
-        return "and group not like 'movies_x264_3d'"
+        return " and group not like 'movies_x264_3d'"
     elif __uhdStat__ == False & __threeDstat__ == True:
-        return "and group not like ('movies_x264_4k' and 'movies_x265_4k' and 'movies_x265_4k_hdr')"
+        return " and group not like ('movies_x264_4k' and 'movies_x265_4k' and 'movies_x265_4k_hdr')"
 
 
 def searchTermParser(__term__):
@@ -75,8 +75,8 @@ def query_db(__query__):
     cursor = connect.cursor()
     cursor.execute(__query__)
 
-    results = cursor.fetchall()
-    return render_template("results.html", data=results)
+    data = cursor.fetchall()
+    return render_template("results.html", data=data)
 
 if __name__ == "__main__":
     app.run(debug=False)

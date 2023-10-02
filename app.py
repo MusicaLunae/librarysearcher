@@ -1,7 +1,13 @@
-from flask import Flask, render_template, request
-import sqlite3
+import os
+from flask import Flask, render_template, request, url_for, redirect
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.sql import func
+
 
 app = Flask(__name__)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, )
+
 @app.route("/")
 def index():
     return render_template("index.html")
